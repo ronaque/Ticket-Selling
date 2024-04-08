@@ -22,14 +22,13 @@ from ticket_selling_app.views import index
 
 schema_view = get_schema_view(
     openapi.Info(
-        title="Episyche Technologies",
-        default_version='v1',),
+        title="Ticket Selling",
+        default_version='V1',),
     public=True,
     permission_classes=[permissions.AllowAny],
 )
-
 urlpatterns = [
-    path('', index.main, name='main'),
+    path('', index.main, name='index'),
     path('admin/', admin.site.urls),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0),name='schema-swagger-ui'),
 ]

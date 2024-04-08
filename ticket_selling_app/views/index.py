@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, HttpResponseNotFound
 from django.template import loader
 from django.views.decorators.http import require_http_methods
 
@@ -7,3 +7,7 @@ from django.views.decorators.http import require_http_methods
 def main(request):
     template = loader.get_template('main.html')
     return HttpResponse(template.render())
+
+def handler404(request, exception):
+    template = loader.get_template('main.html')
+    return HttpResponseNotFound(template.render())
