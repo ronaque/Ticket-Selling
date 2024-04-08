@@ -1,3 +1,5 @@
+migrations.ps1
+
 # Django #
 *.log
 *.pot
