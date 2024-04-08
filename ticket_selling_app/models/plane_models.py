@@ -1,6 +1,6 @@
 from django.db import models
 
-from ticket_selling_app.models.common import City
+from ticket_selling_app.models.common_models import City
 
 class Airport(models.Model):
     name = models.CharField(max_length=100)
