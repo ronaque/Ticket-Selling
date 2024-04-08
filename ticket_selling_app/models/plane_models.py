@@ -11,8 +11,8 @@ class Plane(models.Model):
 
 class PlaneTravel(models.Model):
     plane_id = models.ForeignKey(Plane, on_delete=models.CASCADE)
-    airport_departure_id = models.ForeignKey(Airport, on_delete=models.CASCADE)
-    airport_arrival_id = models.ForeignKey(Airport, on_delete=models.CASCADE)
+    airport_departure_id = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name='airport_departure')
+    airport_arrival_id = models.ForeignKey(Airport, on_delete=models.CASCADE, related_name='airport_arrival')
     departure_time = models.DateTimeField()
     arrival_time = models.DateTimeField()
 

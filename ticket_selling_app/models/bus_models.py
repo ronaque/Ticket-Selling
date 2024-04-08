@@ -12,8 +12,8 @@ class Bus(models.Model):
 
 class BusTravel(models.Model):
     bus_id = models.ForeignKey(Bus, on_delete=models.CASCADE)
-    bus_station_departure_id = models.ForeignKey(BusStation, on_delete=models.CASCADE)
-    bus_station_arrival_id = models.ForeignKey(BusStation, on_delete=models.CASCADE)
+    bus_station_departure_id = models.ForeignKey(BusStation, on_delete=models.CASCADE, related_name='bus_station_departure')
+    bus_station_arrival_id = models.ForeignKey(BusStation, on_delete=models.CASCADE, related_name='bus_station_arrival')
     departure_time = models.DateTimeField()
     arrival_time = models.DateTimeField()
 
