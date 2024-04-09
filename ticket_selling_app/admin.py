@@ -1,7 +1,7 @@
 from django.apps import apps
 from django.contrib import admin
 
-from ticket_selling_app.models.common import *
+from ticket_selling_app.models.common_models import *
 from ticket_selling_app.models.bus_models import *
 from ticket_selling_app.models.plane_models import *
 
