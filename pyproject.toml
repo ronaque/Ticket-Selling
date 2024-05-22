@@ -43,6 +43,7 @@ select = [
 ]
 ignore = [
     "E501", # line too long
+    "W293"
 ]
 
 [tool.ruff.lint.per-file-ignores]
