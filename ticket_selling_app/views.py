@@ -31,6 +31,8 @@ def path_between_cities(request):
     if "begin_city" not in json_body or "end_city" not in json_body:
         return HttpResponseBadRequest("Invalid request")
     try:
+        json_body["begin_city"] = json_body["begin_city"].title()
+        json_body["end_city"] = json_body["end_city"].title()
         begin_city = City.objects.get(name=json_body["begin_city"])
         end_city = City.objects.get(name=json_body["end_city"])
         path = find_path_bfs(begin_city, end_city)
